@@ -23,7 +23,7 @@
 ```yml
 - name: "Bhao" # 你的称呼
   url: "https://dwd.moe" # 你的网站 URL
-  img: "dwd.moe.jpg" # 你的头像文件名（请使用 domain.ext 的格式并上传至 src/img 中）
+  avatar: "dwd.moe.jpg" # 你的头像文件名（请使用 domain.ext 的格式并上传至 src/img 中）
   desc: "布好布好布？好布好布好！" # 你的 Slogan
 ```
 
