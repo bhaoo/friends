@@ -15,7 +15,7 @@ type Friend = {
   const file: Friend[] = yaml.load(fs.readFileSync(filePath, "utf-8")) as Friend[];
   const newFile = file.map((user) => ({
     ...user,
-    img: `https://bcdn.bakaomg.cn/blog/friends/${user.img}`,
+    avatar: `https://bcdn.bakaomg.cn/blog/friends/${user.img}`,
   }));
 
   fs.mkdirSync("./dist", { recursive: true });
