@@ -1,0 +1,57 @@
+name: Compress and Upload Images
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/img/**.jpg'
+      - 'src/img/**.jpeg'
+      - 'src/img/**.png'
+      - 'src/img/**.webp'
+
+jobs:
+  compress-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 # 获取最近两次提交，用于比较文件更改
+
+      - name: Get modified files
+        id: modified_files
+        run: |
+          FILES=$(git diff --name-only HEAD^ HEAD -- 'src/img/')
+          echo "Modified files:"
+          echo "$FILES"
+          FILES=$(echo "$FILES" | tr '\n' ' ')
+          echo "FILES=$FILES" >> $GITHUB_ENV
+
+      - name: Compress images
+        uses: calibreapp/image-actions@main
+        with:
+          compressOnly: true
+          ignorePaths: 'node_modules/**,build'
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install coscmd
+        run: pip install coscmd
+
+      - name: Configure coscmd
+        env:
+          SECRET_ID: ${{ secrets.SECRET_ID }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          BUCKET: ${{ secrets.BUCKET }}
+          REGION: ${{ secrets.REGION }}
+        run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
+
+      - name: Upload compressed images to COS
+        run: |
+          IFS=$'\n'
+          for FILE in ${{ env.FILES }}
+          do
+            echo "Uploading $FILE to COS"
+            coscmd upload $FILE blog/friends/
+          done
