@@ -4,7 +4,7 @@ import yaml from "js-yaml";
 type Friend = {
   name: string;
   url: string;
-  img: string;
+  avatar: string;
   desc: string;
 };
 
