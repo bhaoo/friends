@@ -1,1 +1,99 @@
+- name: "ohmyga"
+  url: "https://ohmyga.dev/"
+  img: "ohmyga.dev.png"
+  desc: "一只想咸鱼翻身的萌新"
 
+- name: "皮皮凛の家"
+  url: "https://owomoe.net/"
+  img: "owomoe.net.jpg"
+  desc: "永远相信美好的事情即将发生~"
+
+- name: "Yueer"
+  url: "https://blog.yueer.moe/"
+  img: "blog.yueer.moe.webp"
+  desc: "一个什么都想做却做不完的笨蛋"
+
+- name: "Bottle 小站"
+  url: "https://bottle.moe/"
+  img: "bottle.moe.png"
+  desc: "咸鱼，代码，视频，生活"
+
+- name: "Eltrac"
+  url: "https://guhub.cn/"
+  img: "guhub.cn.jpg"
+  desc: "暗夜行路，终遇奇迹。"
+
+- name: "Link"
+  url: "https://atlinker.cn/"
+  img: "atlinker.cn.jpeg"
+  desc: "Just 4 Fun"
+
+- name: "萌新's blog"
+  url: "https://www.moexin.cn/"
+  img: "www.moexin.cn.jpeg"
+  desc: "萌新的摸鱼小窝"
+
+- name: "小姜饼"
+  url: "https://qaq.icu/"
+  img: "qaq.icu.jpeg"
+  desc: "环游是无趣，至少可以陪着你。"
+
+- name: "Souta"
+  url: "https://souta.cc/"
+  img: "souta.cc.webp"
+  desc: "可能是一个笨蛋"
+
+- name: "季悠然"
+  url: "https://blog.mitsuha.space/"
+  img: "blog.mitsuha.space.webp"
+  desc: "寻找有趣的灵魂"
+
+- name: "Hokori"
+  url: "https://blog.hokori.online/"
+  img: "blog.hokori.online.jpg"
+  desc: "即使是尘埃也有其尊严"
+
+- name: "OkYes! 技术博客"
+  url: "https://2890.ltd/"
+  img: "2890.ltd.png"
+  desc: "念念不忘，必有回响"
+
+- name: "渡鸦的小窝"
+  url: "https://polarws.moe/"
+  img: "polarws.moe.webp"
+  desc: "一条快乐咸鱼"
+
+- name: "CairBin's Blog"
+  url: "https://cairbin.top/"
+  img: "cairbin.top.jpg"
+  desc: "To be or not to be..."
+
+- name: "ZigZagK 的博客"
+  url: "https://zigzagk.top/"
+  img: "zigzagk.top.webp"
+  desc: "Never give up fighting!"
+
+- name: "Erhecy's Blog"
+  url: "https://0u0.ren/"
+  img: "0u0.ren.jpeg"
+  desc: "我的世界热爱者"
+
+- name: "Makoto' Blog"
+  url: "https://blog.ciy.cool/"
+  img: "blog.ciy.cool.webp"
+  desc: "Makoto 的个人博客"
+
+- name: "GTX690战术核显卡导弹的猫窝"
+  url: "https://nekopara.uk/"
+  img: "nekopara.uk.jpg"
+  desc: "GTX690战术核显卡导弹的猫窝，猫猫可爱捏，喵喵喵！"
+
+- name: "RoLingG"
+  url: "https://rolingg.top/"
+  img: "rolingg.top.webp"
+  desc: "RoLingG 的博客"
+
+- name: "崇宫苟道"
+  url: "https://blog.lzh441.cn/"
+  img: "blog.lzh441.cn.webp"
+  desc: "让我解谜 PTSD 的道鸽鸽"
