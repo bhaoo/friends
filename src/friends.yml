@@ -98,8 +98,12 @@
   avatar: "blog.lzh441.cn.webp"
   desc: "让我解谜 PTSD 的道鸽鸽"
 
-- name: "时隐" 
-  url: "https://shiyin.cafe" 
-  avatar: "shiyin.cafe.jpg" 
+- name: "时隐"
+  url: "https://shiyin.cafe"
+  avatar: "shiyin.cafe.jpg"
   desc: "兴趣使然的未来主义建造者"
-  
+
+- name: "GreyFlowers"
+  url: "https://caelum.moe"
+  avatar: "ende.webp"
+  desc: "『灰色的花，终有一天会盛开吧。』"
