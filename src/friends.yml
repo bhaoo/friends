@@ -90,7 +90,7 @@
 
 - name: "RoLingG"
   url: "https://rolingg.top/"
-  avatar: "rolingg.top.webp"
+  avatar: "rolingg.top.png"
   desc: "RoLingG 的博客"
 
 - name: "崇宫苟道"
@@ -105,5 +105,5 @@
 
 - name: "GreyFlowers"
   url: "https://caelum.moe"
-  avatar: "ende.webp"
+  avatar: "caelum.moe.webp"
   desc: "『灰色的花，终有一天会盛开吧。』"
