@@ -23,13 +23,21 @@ jobs:
       - name: Get modified files
         id: modified_files
         run: |
-          FILES=$(git diff --name-only HEAD^ HEAD -- 'src/img/')
-          echo "Modified files:"
-          echo "$FILES"
-          FILES=$(echo "$FILES" | tr '\n' ' ')
-          echo "FILES=$FILES" >> $GITHUB_ENV
+          ADDED=$(git diff --diff-filter=ACMR --name-only HEAD^ HEAD -- 'src/img/')
+          DELETED=$(git diff --diff-filter=DR --name-status HEAD^ HEAD -- 'src/img/' | awk '$1=="D" || $1=="R"{print $2}')
+
+          echo "ADDED_MODIFIED=$ADDED" >> $GITHUB_ENV
+          echo "DELETED_OR_RENAMED=$DELETED" >> $GITHUB_ENV
+
+          if [ -n "$ADDED" ]; then
+            echo "has_add_or_mod=true" >> $GITHUB_OUTPUT
+          fi
+          if [ -n "$DELETED" ]; then
+            echo "has_delete_or_rename=true" >> $GITHUB_OUTPUT
+          fi
 
       - name: Compress images
+        if: steps.modified_files.outputs.has_add_or_mod == 'true'
         uses: calibreapp/image-actions@main
         with:
           compressOnly: true
@@ -48,10 +56,22 @@ jobs:
         run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
 
       - name: Upload compressed images to COS
+        if: steps.modified_files.outputs.has_add_or_mod == 'true'
         run: |
           IFS=$'\n'
-          for FILE in ${{ env.FILES }}
+          for FILE in $ADDED_MODIFIED_FILES
           do
             echo "Uploading $FILE to COS"
             coscmd upload $FILE blog/friends/
           done
+
+      - name: Delete removed or renamed files from COS
+        if: steps.modified_files.outputs.has_delete_or_rename == 'true'
+        run: |
+          IFS=$'\n'
+          for FILE in $DELETED_OR_RENAMED
+          do
+            echo "Deleting $FILE from COS"
+            coscmd delete "blog/friends/$FILE"
+          done
+        
